@@ -4,11 +4,11 @@ Markdown files and static site tools for my website.
 
 ## Structure
 
-All content is written in markdown (except for top level landing pages).
+All content is written in markdown.
 Each page or book has its own directory
 along with its own navigation structure specified in its `nav.yaml`.
-Each directory (including the root) has a landing page.
-All markdown files go inside a `markdown` directory.
+Each directory (including the root, `docs/`) has a landing page.
+All markdown files go inside a `markdown` directory (except for top level landing pages).
 
 ## `make`
 
