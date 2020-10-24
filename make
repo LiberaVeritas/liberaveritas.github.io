@@ -21,7 +21,8 @@ args="--template ${root}/template.html \
 -f markdown\
 +tex_math_single_backslash\
 +backtick_code_blocks\
-+fenced_code_attributes \
++fenced_code_attributes\
++raw_tex+latex_macros \
 --mathjax"
 
 # convert index.md

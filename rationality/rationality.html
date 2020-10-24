@@ -12,6 +12,17 @@
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-58XYGP95FT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-58XYGP95FT');
+</script>
+
 </head>
 <body>
 <header id="header">
@@ -25,28 +36,12 @@
 <aside id="mobile-nav">
 <h3>Overview</h3>
 <nav class="nav-list">
-<div class="nav-box">
-<a href=""></a>
-<label for="-mobile-label">+</label>
-</div>
-<input id="-mobile-label" type="checkbox" style="display: none;">
-<nav id="-mobile-nav" class="section-list" class="nav-list">
-<a href=""></a>
-</nav>
 </nav>
 </aside>
 <div id="big-box">
 <aside id="left-nav">
 <h3>Overview</h3>
 <nav class="nav-list">
-<div class="nav-box">
-<a href=""></a>
-<label for="-label">+</label>
-</div>
-<input id="-label" type="checkbox" style="display: none;">
-<nav id=-nav class="section-list" class="nav-list">
-<a href=""></a>
-</nav>
 </nav>
 </aside>
 <main id="main">
@@ -70,13 +65,7 @@
 </aside>
 </div>
 <style>
-#-label:checked + #-nav {
-    display: block;
-}
 
-#-mobile-label:checked + #-mobile-nav {
-    display: block;
-}
 </style>
 </body>
 </html>
