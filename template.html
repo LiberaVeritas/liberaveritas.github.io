@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="generator" content="pandoc"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1"/>
+
+<title>$title$</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&display=swap">
+<link rel="stylesheet" type="text/css" href="/style.css">
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header id="header">
+<nav id="top-nav">
+<label id="mobile-toggle-button" for="mobile-toggle" style="cursor: pointer; margin-right: 10px;">☰</label>
+<a href="/index.html">Home</a>
+<a href="https://github.com/LiberaVeritas">GitHub</a>
+<a href="/topics.html">Notes</a>
+</nav>
+</header>
+<input id="mobile-toggle" type="checkbox" style="display: none;">
+<aside id="mobile-nav">
+<h3>Overview</h3>
+<nav class="nav-list">
+$for(chapter)$
+<div class="nav-box">
+<a href="$chapter.href$">$chapter.name$</a>
+<label for="$chapter.label$-mobile-label">+</label>
+</div>
+<input id="$chapter.label$-mobile-label" type="checkbox" style="display: none;">
+<nav id="$chapter.label$-mobile-nav" class="section-list" class="nav-list">
+$for(chapter.section)$
+<a href="$chapter.section.href$">$chapter.section.name$</a>
+$endfor$
+</nav>
+$endfor$
+</nav>
+</aside>
+<div id="big-box">
+<aside id="left-nav">
+<h3>Overview</h3>
+<nav class="nav-list">
+$for(chapter)$
+<div class="nav-box">
+<a href="$chapter.href$">$chapter.name$</a>
+<label for="$chapter.label$-label">+</label>
+</div>
+<input id="$chapter.label$-label" type="checkbox" style="display: none;">
+<nav id=$chapter.label$-nav class="section-list" class="nav-list">
+$for(chapter.section)$
+<a href="$chapter.section.href$">$chapter.section.name$</a>
+$endfor$
+</nav>
+$endfor$
+</nav>
+</aside>
+<main id="main">
+$body$
+<div id="page-nav">
+$if(previous)$
+<a href="$previous.href$" class="nav-button" id="left-button" title="$previous.name$" >❮</a>
+$else$
+<a style="visibility: none;"></a>
+$endif$
+$if(next)$
+<a href="$next.href$" class="nav-button" id="right-button" title="$next.name$">❯</a>
+$else$
+<a style="visibility: none;"></a>
+$endif$
+</div>
+<footer>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+</a>
+<br/>This work is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</footer>
+</main>
+<aside id="right-nav">
+<h3>Contents</h3>
+<nav class="nav-list">
+$for(subsection)$
+<a href="#$subsection$">$subsection$</a>
+$endfor$
+</nav>
+</aside>
+</div>
+<style>
+$for(chapter)$
+#$chapter.label$-label:checked + #$chapter.label$-nav {
+    display: block;
+}
+$endfor$
+
+$for(chapter)$
+#$chapter.label$-mobile-label:checked + #$chapter.label$-mobile-nav {
+    display: block;
+}
+$endfor$
+</style>
+</body>
+</html>
