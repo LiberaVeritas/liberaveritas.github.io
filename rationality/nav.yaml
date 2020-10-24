@@ -1,0 +1,9 @@
+---
+# requires root relative paths
+# labels are for html classes/ids
+chapter:
+  - name:
+    href:
+    label:
+    section:
+---
