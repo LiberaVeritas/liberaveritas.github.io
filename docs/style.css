@@ -294,13 +294,13 @@ footer a, body a {
         flex: 200px;
         max-width: 200px;
         min-width: 150px;
-        border-right: var(--color)42 1px solid;
+        border-right: var(--border) 1px solid;
     }
 
     #main {
         flex: 800px;
         max-width: 800px;
-        border-left: var(--color)42 1px solid;
+        border-left: var(--border) 1px solid;
     }
 }
 
@@ -309,20 +309,20 @@ footer a, body a {
     #left-nav {
         display: block;
         flex: 200px;
-        border-right: var(--color)42 1px solid;
+        border-right: var(--border) 1px solid;
     }
 
     #main {
         flex: 800px;
         max-width: 800px;
-        border-left: var(--color)42 1px solid;
-        border-right: var(--color)42 1px solid;
+        border-left: var(--border) 1px solid;
+        border-right: var(--border) 1px solid;
     }
 
     #right-nav {
         display: block;
         flex: 200px;
-        border-left: var(--color)42 1px solid;
+        border-left: var(--border) 1px solid;
     }
 }
 /* ---------------------------------------------- */
