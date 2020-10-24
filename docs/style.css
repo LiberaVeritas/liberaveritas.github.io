@@ -8,8 +8,43 @@
 
 /* globals */
 :root {
-    --bg-color: #dfdfdf;
-    --text-color: #424242;
+    --background: #e6e6e6;
+    --color: #424242;
+    --block: #cecece;
+    --border: #b6b6b6;
+    --hover: #cb4b16;
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Vollkorn-Regular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Vollkorn-Italic.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Vollkorn-Bold.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Vollkorn-BoldItalic.woff2) format('woff2');
 }
 
 img {
@@ -23,18 +58,30 @@ label {
 }
 
 label:hover {
-    color: #3b94d2;
+    color: var(--link);
+}
+
+tr {
+    font-variant-numeric: tabular-nums;
+}
+
+h1::after {
+    border-bottom: var(--border) 1px solid;
 }
 
 body {
     font-family: 'Vollkorn', serif;
-    font-size: 14px;    /* mobile default */
+    font-size: 100%;    /* mobile default */
     line-height: 1.5;
+    font-feature-settings: lnum;
+    font-variant-numeric: lining-nums;
 
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    text-rendering: optimizeLegibility;
-    font-kerning: normal;
+    color: var(--color);
+    background-color: var(--background);
+}
+
+aside {
+    font-size: 90%;
 }
 
 /* pandoc generated from fenced code */
@@ -44,15 +91,15 @@ pre.sourceCode {
     word-wrap: pre;
     font-size: 80%;
     
-    background-color: #cecece;
+    background-color: var(--block);
     color: black;
     padding: 5px;
     border-radius: 5px;
-    border: #b6b6b6 1px solid;
+    border: var(--border) 1px solid;
 }
 
 code.sourceCode {
-    font-family: 'Consolas', monospace;
+    font-family: 'Inconsolata', monospace;
     color: black;
     border: none;
     padding: 0px;
@@ -61,31 +108,23 @@ code.sourceCode {
 /* non fenced code enclosed in single backticks */
 code {
     font-family: 'Inconsolata', monospace;
-    background-color: #cecece;
-    color: var(--text-color);
+    background-color: var(--block);
+    color: var(--color);
     border-radius: 3px;
-    border: #b6b6b6 1px solid;
+    border: var(--border) 1px solid;
     padding: 0px 0.2em 0px 0.15em;
 }
 
 /* change font size depending on media */
-@media only screen and (min-width: 901px) {
+@media only screen and (min-width: 901px) and (max-width: 1439px) {
     main {
-        font-size: 16px;
-    }
-
-    aside, nav {
-        font-size: 14px;
+        font-size: 110%;
     }
 }
 
 @media only screen and (min-width: 1440px) {
     main {
-        font-size: 18px;
-    }
-
-    aside, nav {
-        font-size: 16px;
+        font-size: 120%;
     }
 }
 /* ---------------------------------------------- */
@@ -104,14 +143,14 @@ section, footer, nav, footer {
 }
 
 footer {
-    border-top: #424242 1px solid;
+    border-top: var(--color) 1px solid;
     font-size: 75%;
     padding: 10px;
     text-align: center;
 }
 
-footer a {
-    color: var(--text-color)
+footer a, body a {
+    color: var(--color)
 }
 
 /* navigation bars style */
@@ -123,8 +162,8 @@ footer a {
 #top-nav a {
     margin-right: 10px;
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
+    color: var(--color);
+    font-weight: 700;
 }
 
 #left-nav:not(:hover) {
@@ -138,7 +177,7 @@ footer a {
 /* hidden by default, display when #mobile-toggle is checked */
 #mobile-nav {
     display: none;
-    color: var(--text-color);
+    color: var(--color);
     background-color: #eaeaea;
     scrollbar-width: thin;
 
@@ -148,7 +187,7 @@ footer a {
     position: sticky;
     z-index: 5;
 
-    border: var(--text-color) 1px solid;
+    border: var(--color) 1px solid;
     border-top: 0px;
 }
 
@@ -162,7 +201,7 @@ footer a {
 
 #left-nav {
     display: none;
-    color: var(--text-color);
+    color: var(--color);
     scrollbar-width: thin;
     transition: opacity 0.15s;
 
@@ -174,7 +213,7 @@ footer a {
 
 #right-nav {
     display: none;
-    color: var(--text-color);
+    color: var(--color);
     scrollbar-width: thin;
     transition: opacity 0.15s;
 
@@ -194,11 +233,11 @@ footer a {
     text-decoration: none;
     display: block;
     width: 90%;
-    color: var(--text-color);
+    color: var(--color);
 }
 
 .nav-list a:hover {
-    color: #3B94D2;
+    color: var(--hover);
 }
 
 .nav-box {
@@ -228,10 +267,10 @@ footer a {
 #header {
     max-width: 1200px;
     margin: auto;
-    border-top: var(--text-color) 1px solid;
-    border-bottom: var(--text-color) 1px solid;
+    border-top: var(--color) 1px solid;
+    border-bottom: var(--color) 1px solid;
 
-    box-shadow: 0px 5px 7px -8px var(--text-color);
+    box-shadow: 0px 5px 7px -8px var(--color);
 }
 /* ---------------------------------------------- */
 
@@ -255,13 +294,13 @@ footer a {
         flex: 200px;
         max-width: 200px;
         min-width: 150px;
-        border-right: #42424242 1px solid;
+        border-right: var(--color)42 1px solid;
     }
 
     #main {
         flex: 800px;
         max-width: 800px;
-        border-left: #42424242 1px solid;
+        border-left: var(--color)42 1px solid;
     }
 }
 
@@ -270,20 +309,20 @@ footer a {
     #left-nav {
         display: block;
         flex: 200px;
-        border-right: #42424242 1px solid;
+        border-right: var(--color)42 1px solid;
     }
 
     #main {
         flex: 800px;
         max-width: 800px;
-        border-left: #42424242 1px solid;
-        border-right: #42424242 1px solid;
+        border-left: var(--color)42 1px solid;
+        border-right: var(--color)42 1px solid;
     }
 
     #right-nav {
         display: block;
         flex: 200px;
-        border-left: #42424242 1px solid;
+        border-left: var(--color)42 1px solid;
     }
 }
 /* ---------------------------------------------- */
@@ -291,7 +330,7 @@ footer a {
 .nav-button {
     text-decoration: none;
     background-color: #bfbfbf;
-    color: var(--text-color);
+    color: var(--color);
 }
 
 #left-button {
@@ -305,8 +344,8 @@ footer a {
 }
 
 .nav-button:hover {
-    background-color: #cb4b16;
-    color: var(--bg-color);
+    background-color: var(--hover);
+    color: var(--background);
 }
 
 #page-nav {

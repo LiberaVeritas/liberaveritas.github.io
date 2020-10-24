@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# 1. converts index.md to index.html with pandoc in root
-# 2. loops through first level directories and recursively convert .md to .html
-# 3. calls linkchecker
+# 1. cd to docs and set docs as root
+# 2. converts index.md to index.html with pandoc in root
+# 3. loops through first level directories and recursively convert .md to .html
+# 4. calls linkchecker
 #
 # each directory has its own nav.yaml and landing page
 # all conversions use the same template.html in root
@@ -14,7 +15,8 @@ shopt -s globstar   # shell option set globstar; allows ** recursive wildcard
 red=`tput setaf 1`  # set ANSI foreground
 reset=`tput sgr0`   # reset text format to default
 
-root=$(pwd)  # working directory
+root="$(pwd)/docs"  # working directory
+cd ${root}
 
 # common args for pandoc
 args="--template ${root}/template.html \
@@ -32,6 +34,11 @@ pandoc index.md --metadata-file nav.yaml -s -o index.html ${args}
 
 # loop through directories
 for dir in */; do
+    # skip fonts
+    if [[ ${dir} == "fonts/" ]]
+    then
+        continue
+    fi
     # recurse and convert
     for file in ${dir}**/*.md; do
         echo $file
