@@ -6,4 +6,4 @@ subsection:
 
 Welcome to my website!
 
-Check out my [tshirt designs](https://www.redbubble.com/people/korwynkim/shop).
+Check out my [t-shirt designs](https://www.redbubble.com/people/korwynkim/shop).
