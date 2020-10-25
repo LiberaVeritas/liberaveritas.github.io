@@ -35,7 +35,7 @@ pandoc index.md --metadata-file nav.yaml -s -o index.html ${args}
 # loop through directories
 for dir in */; do
     # skip fonts
-    if [[ ${dir} == "fonts/" ]]
+    if [[ ${dir} == "fonts/" || "favicon/" ]];
     then
         continue
     fi
