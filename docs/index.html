@@ -7,14 +7,38 @@
 <meta name="description" content="My website with intuitive noves on rationality, math, and physics"/>
 <meta name="keyworsd" content="Intuitive, Math, Rationality, Physics"/>
 
+<title>LiberaVeritas</title>
+
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-
-<title>LiberaVeritas</title>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap">
 <link rel="stylesheet" type="text/css" href="/style.css">
 
+<!-- enumerate navigation toggle -->
+<style>
+#rationality-label:checked + #rationality-nav {
+    display: block;
+}
+#math-label:checked + #math-nav {
+    display: block;
+}
+#physics-label:checked + #physics-nav {
+    display: block;
+}
+
+#rationality-mobile-label:checked + #rationality-mobile-nav {
+    display: block;
+}
+#math-mobile-label:checked + #math-mobile-nav {
+    display: block;
+}
+#physics-mobile-label:checked + #physics-mobile-nav {
+    display: block;
+}
+</style>
+
+<!-- mathjax -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -27,6 +51,9 @@
 
   gtag('config', 'G-58XYGP95FT');
 </script>
+
+<!-- instant.page -->
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
 
 </head>
 <body>
@@ -43,26 +70,26 @@
 <nav class="nav-list">
 <div class="nav-box">
 <a href="/rationality/rationality.html">Rationality (TODO)</a>
-<label for="-mobile-label">+</label>
+<label for="rationality-mobile-label">+</label>
 </div>
-<input id="-mobile-label" type="checkbox" style="display: none;">
-<nav id="-mobile-nav" class="section-list" class="nav-list">
+<input id="rationality-mobile-label" type="checkbox" style="display: none;">
+<nav id="rationality-mobile-nav" class="section-list, nav-list">
 <a href=""></a>
 </nav>
 <div class="nav-box">
 <a href="">Math (TODO)</a>
-<label for="-mobile-label">+</label>
+<label for="math-mobile-label">+</label>
 </div>
-<input id="-mobile-label" type="checkbox" style="display: none;">
-<nav id="-mobile-nav" class="section-list" class="nav-list">
+<input id="math-mobile-label" type="checkbox" style="display: none;">
+<nav id="math-mobile-nav" class="section-list, nav-list">
 <a href=""></a>
 </nav>
 <div class="nav-box">
 <a href="">Physics (TODO)</a>
-<label for="-mobile-label">+</label>
+<label for="physics-mobile-label">+</label>
 </div>
-<input id="-mobile-label" type="checkbox" style="display: none;">
-<nav id="-mobile-nav" class="section-list" class="nav-list">
+<input id="physics-mobile-label" type="checkbox" style="display: none;">
+<nav id="physics-mobile-nav" class="section-list, nav-list">
 <a href=""></a>
 </nav>
 </nav>
@@ -73,26 +100,26 @@
 <nav class="nav-list">
 <div class="nav-box">
 <a href="/rationality/rationality.html">Rationality (TODO)</a>
-<label for="-label">+</label>
+<label for="rationality-label">+</label>
 </div>
-<input id="-label" type="checkbox" style="display: none;">
-<nav id=-nav class="section-list" class="nav-list">
+<input id="rationality-label" type="checkbox" style="display: none;">
+<nav id=rationality-nav class="section-list, nav-list">
 <a href=""></a>
 </nav>
 <div class="nav-box">
 <a href="">Math (TODO)</a>
-<label for="-label">+</label>
+<label for="math-label">+</label>
 </div>
-<input id="-label" type="checkbox" style="display: none;">
-<nav id=-nav class="section-list" class="nav-list">
+<input id="math-label" type="checkbox" style="display: none;">
+<nav id=math-nav class="section-list, nav-list">
 <a href=""></a>
 </nav>
 <div class="nav-box">
 <a href="">Physics (TODO)</a>
-<label for="-label">+</label>
+<label for="physics-label">+</label>
 </div>
-<input id="-label" type="checkbox" style="display: none;">
-<nav id=-nav class="section-list" class="nav-list">
+<input id="physics-label" type="checkbox" style="display: none;">
+<nav id=physics-nav class="section-list, nav-list">
 <a href=""></a>
 </nav>
 </nav>
@@ -101,8 +128,8 @@
 <p>Welcome to my website!</p>
 <p>Check out my <a href="https://www.redbubble.com/people/korwynkim/shop">t-shirt designs</a>.</p>
 <div id="page-nav">
-<a style="visibility: none;"></a>
-<a style="visibility: none;"></a>
+<a style="visibility: hidden;"></a>
+<a style="visibility: hidden;"></a>
 </div>
 <footer>
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
@@ -119,26 +146,5 @@
 </nav>
 </aside>
 </div>
-<style>
-#-label:checked + #-nav {
-    display: block;
-}
-#-label:checked + #-nav {
-    display: block;
-}
-#-label:checked + #-nav {
-    display: block;
-}
-
-#-mobile-label:checked + #-mobile-nav {
-    display: block;
-}
-#-mobile-label:checked + #-mobile-nav {
-    display: block;
-}
-#-mobile-label:checked + #-mobile-nav {
-    display: block;
-}
-</style>
 </body>
 </html>

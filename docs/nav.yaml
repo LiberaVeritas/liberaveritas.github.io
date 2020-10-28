@@ -1,13 +1,18 @@
 ---
+# requires root relative paths
+# labels are for html classes/ids
 chapter:
   - name: Rationality (TODO)
     href: /rationality/rationality.html
+    label: rationality
     section:
   - name: Math (TODO)
     href:
+    label: math
     section:
   - name: Physics (TODO)
     href:
+    label: physics
     section:
 ---
   
